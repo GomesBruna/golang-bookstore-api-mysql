@@ -1,0 +1,41 @@
+### POST book 1
+POST http://localhost:9010/book/
+Content-Type: application/json
+
+{
+    "Name": "Zero to one",
+    "Author": "Peter Thiel",
+    "Publication": "Penguin"
+}
+
+### POST book 2
+POST http://localhost:9010/book/
+Content-Type: application/json
+
+{
+    "Name": "The startup way",
+    "Author": "Eric Ries",
+    "Publication": "Penguin"
+}
+
+### GET all books
+GET http://localhost:9010/book/
+Content-Type: application/json
+
+### GET specific book
+GET http://localhost:9010/book/2
+Content-Type: application/json
+
+### PUT book 2
+PUT http://localhost:9010/book/2
+Content-Type: application/json
+
+{
+    "Name": "The startup way",
+    "Author": "Eric Ries",
+    "Publication": "Orion"
+}
+
+### DELETE Book 2
+DELETE http://localhost:9010/book/2
+Content-Type: application/json

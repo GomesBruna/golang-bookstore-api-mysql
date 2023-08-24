@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "9010:9010"
+    expose:
+      - '9010'
+    volumes:
+      - .:/home/go/app
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'bookstore'
+      MYSQL_PASSWORD: 'service123'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - "3306:3306"
+    expose:
+      - '3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
+    driver: local
